@@ -5,6 +5,15 @@ $header: '.header';
     display: block;
     width: 100%;
     height: 50px;
+    padding: 15px;
+    text-align: right;
     border-bottom: 1px solid $color-dusty-gray;
     background-color: $color-white;
+
+    &__link {
+        position: relative;
+        display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
