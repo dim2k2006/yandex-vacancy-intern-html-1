@@ -1,0 +1,8 @@
+node_modules
+src/bower_components
+.DS_Store
+output
+static
+blocks.scss
+src/sass/vendor
+.idea/

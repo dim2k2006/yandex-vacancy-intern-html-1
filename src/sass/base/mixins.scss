@@ -1,0 +1,312 @@
+// blockTitle
+@mixin blockTitle {
+    margin-bottom: .5em;
+}
+
+// blockDefault
+@mixin blockDefault {
+    &__wrapper {
+        position: relative;
+        display: block;
+        @include container;
+    }
+    &__header {
+        position: relative;
+        display: block;
+    }
+    &__content {
+        position: relative;
+        display: block;
+    }
+    &__footer {
+        position: relative;
+        display: block;
+    }
+}
+
+// blockMargin
+@mixin blockMargin {
+    margin-bottom: 15px;
+}
+
+// inputDefault
+//@mixin inputDefault {
+//    position: relative;
+//    display: block;
+//    width: 100%;
+//    height: 40px;
+//    padding-top: 0;
+//    padding-bottom: 0;
+//    padding-left: 15px;
+//    padding-right: 15px;
+//    font-family: $font-family-regular;
+//    font-size: $font-size-predefault;
+//    line-height: 40px;
+//    appearance: none;
+//    border: none;
+//    outline: none;
+//    color: rgba($color-cod-gray, .8);
+//    border-radius: 0;
+//    background-color: $color-white;
+//    border: 1px solid $color-mystic;
+//    @include transitionDefault;
+//
+//    &:focus {
+//        border-color: $color-danube;
+//    }
+//}
+
+// textareaDefault
+//@mixin textareaDefault {
+//    position: relative;
+//    display: block;
+//    width: 100%;
+//    height: 120px;
+//    padding-top: 15px;
+//    padding-bottom: 15px;
+//    padding-left: 15px;
+//    padding-right: 15px;
+//    font-family: $font-family-regular;
+//    font-size: $font-size-predefault;
+//    line-height: $line-height-little;
+//    appearance: none;
+//    border: none;
+//    outline: none;
+//    resize: none;
+//    color: rgba($color-cod-gray, .8);;
+//    border-radius: 0;
+//    background-color: $color-white;
+//    border: 1px solid $color-mystic;
+//    @include transitionDefault;
+//
+//    &:focus {
+//        border-color: $color-danube;
+//    }
+//}
+
+// Vertical paddings
+@mixin blockPaddingVertical($top: "", $bottom: "") {
+    @if $top == "top" {
+
+        padding-top: 50px;
+
+        @include respond-to('prebig') {
+            padding-top: 40px;
+        }
+
+    }
+
+    @if $bottom == "bottom" {
+
+        padding-bottom: 50px;
+
+        @include respond-to('prebig') {
+            padding-bottom: 40px;
+        }
+
+    }
+
+    @if $top == "" and $bottom == "" {
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        @include respond-to('prebig') {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+    }
+}
+
+// Horizontal paddings
+@mixin blockPaddingHorizontal {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+// Transition
+@mixin transition($transitions...) {
+    $unfoldedTransitions: ();
+
+    @each $transition in $transitions {
+        $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+    }
+
+    transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition ($transition) {
+    // Default values
+    $property: all;
+    $duration: .3s;
+    $easing: ease; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $defaultProperties: ($property, $duration, $easing, $delay);
+
+    // Grab transition properties if they exist
+    $unfoldedTransition: ();
+
+    @for $i from 1 through length($defaultProperties) {
+        $p: null;
+
+        @if $i <= length($transition) {
+            $p: nth($transition, $i)
+        } @else {
+            $p: nth($defaultProperties, $i)
+        }
+
+        $unfoldedTransition: append($unfoldedTransition, $p);
+    }
+
+    @return $unfoldedTransition;
+}
+
+// Clearfix
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Container paddings
+@mixin container-paddings {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+// Font
+@mixin predefault {
+    line-height: 1.4375;
+    font-size: em-font($font-size-pre-default);
+}
+
+// Size
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Center
+@mixin center {
+    transform: translate(-50%, -50%)
+}
+
+@mixin horizontal-center {
+    transform: translateX(-50%);
+}
+
+@mixin vertical-center {
+    transform: translateY(-50%);
+}
+
+//	Position
+@mixin position($position: absolute, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+// Absolute
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+// Counter
+@mixin counter($item: item) {
+    content: counter($item)"";
+    counter-increment: $item;
+}
+
+// List reset
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Responsive
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @error "Не указано значение для '#{$breakpoint}'."
+    }
+}
+
+// Retina
+@mixin retina-bg($file, $type, $width, $height) {
+    background-image: url('../images/' + $file + '@1x.' + $type);
+    background-repeat: no-repeat;
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio:2),
+    only screen and (min--moz-device-pixel-ratio:2),
+    only screen and (-o-min-device-pixel-ratio:2/1),
+    only screen and (min-device-pixel-ratio:2),
+    only screen and (min-resolution: 2dppx) {
+        background-image: url('../images/' + $file + '@2x.' + $type);
+        background-size: $width $height;
+    }
+}
+
+// placeholder
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// tablePercentCount
+@function tablePercentCount($width, $container) {
+    @return 0% + to-fixed($width / $container * 100, 1);
+}
+
+/// toFixed() function in Sass
+/// @author Hugo Giraudel
+/// @param {Number} $float - Number to format
+/// @param {Number} $digits [2] - Number of digits to leave
+/// @return {Number}
+@function to-fixed($float, $digits: 2) {
+    $sass-precision: 5;
+
+    @if $digits > $sass-precision {
+        @warn "Sass sets default precision to #{$sass-precision} digits, and there is no way to change that for now."
+    + "The returned number will have #{$sass-precision} digits, even if you asked for `#{$digits}`."
+    + "See https://github.com/sass/sass/issues/1122 for further informations.";
+    }
+
+    $pow: pow(10, $digits);
+    @return round($float * $pow) / $pow;
+}
+
+/// Power function
+/// @param {Number} $x
+/// @param {Number} $n
+/// @return {Number}
+@function pow($x, $n) {
+    $ret: 1;
+
+    @if $n >= 0 {
+        @for $i from 1 through $n {
+            $ret: $ret * $x;
+        }
+    } @else {
+        @for $i from $n to 0 {
+            $ret: $ret / $x;
+        }
+    }
+
+    @return $ret;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "vacancy-intern-html-1",
+  "version": "0.1.0",
+  "dependencies": {
+      "normalize.css": "~3.0.3",
+      "susy": "^2.2.12",
+      "lightslider": "^1.1.5",
+      "matchHeight": "matchheight#^0.7.0"
+  }
+}
