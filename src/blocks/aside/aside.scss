@@ -1,0 +1,17 @@
+$aside: '.aside';
+
+#{$aside} {
+    position: relative;
+    display: block;
+    width: 300px;
+    float: right;
+    padding: 15px;
+    border-left: 1px solid $color-silver;
+    box-shadow: -10px 0 15px -10px rgba(0, 0, 0, 0.5);
+
+    p {
+        @include f-last(1) {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 include mixins/bemto
 include ../blocks/header/header
 include ../blocks/footer/footer
+include ../blocks/aside/aside
 
 block vars
     - var innerPage = false
@@ -31,6 +32,9 @@ html(lang="ru")
 
         +b('div').globalWrapper
             +header
+
+
+            +aside
 
             +footer
 

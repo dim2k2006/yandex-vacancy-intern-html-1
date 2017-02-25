@@ -7,8 +7,6 @@ $globalWrapper: '.globalWrapper';
     min-width: 500px;
     margin-left: auto;
     margin-right: auto;
-
-    height: 600px;
-
     background-color: $color-white;
+    @include clearfix;
 }
