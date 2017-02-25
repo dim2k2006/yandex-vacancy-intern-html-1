@@ -1,9 +1,5 @@
 // Font-family
-$font-family-bold: 'open_sansbold', Arial, Helvetica, sans-serif;
-$font-family-italic: 'open_sansitalic', Arial, Helvetica, sans-serif;
-$font-family-light: 'open_sanslight', Arial, Helvetica, sans-serif;
-$font-family-regular: 'open_sansregular', Arial, Helvetica, sans-serif;
-$font-family-semibold: 'open_sanssemibold', Arial, Helvetica, sans-serif;
+$font-family-default: Helvetica, Arial, sans-serif;
 
 // Font-size
 $font-size-prelittle: 8px;
@@ -37,72 +33,9 @@ $line-height-afterlarge: 1.8;
 // Color
 $color-white: #FFFFFF;
 $color-black: #000000;
-$color-cod-gray: #111111;
-$color-athens-gray: #FAFBFC;
-$color-athens-gray-lighter: #E7EAEE;
-$color-athens-gray-light: #DFE3E9;
-$color-athens-gray-dark: #E2E6EB;
-$color-porcelain: #EDEFF1;
-$color-blue-bayoux: #556784;
-$color-neon-carrot: #FF9B37;
-$color-gamboge: #E6A210;
-$color-mine-shaft: #333333;
-$color-mystic: #DDE3ED;
-$color-danube: #78A5DD;
-$color-botticelli: #C7D1E2;
-$color-iron: #E1E4E7;
-$color-boulder: #747474;
-$color-silver: #C3C3C3;
-$color-silver-dark: #b9b9b9;
-$color-navajo-white: #FFE4AB;
-$color-japanese-laurel: #21A000;
-$color-red: #FF0000;
-$color-alto: #CFCFCF;
-$color-mariner-dark: #2973D0;
-$color-mariner-light: #2F7CDC;
-$color-steel-blue: #547BB2;
-$color-east-bay: #455892;
-$color-tahiti-gold: #EE8208;
-$color-silver-chalice: #ADADAD;
-$color-black-haze: #FAFBFB;
-$color-mischka: #CFD5DD;
-
-$color-havelock-blue: #4B87D2;
-$color-cornflower-blue: #5198F1;
-$color-mariner: #3479D0;
-$color-mariner-blue: #2f70c2;
-
-// color border btn
-$color-mariner-dark: #2973d0;
-$color-mariner-light: #2f7cdc;
-
-$color-sun: #FCB315;
-$color-sunglow: #FFBD2F;
-$color-sunglow-light: #FFC13D;
-$color-yellow-sea: #FBAC01;
-
-$color-alizarin-crimson: #E21D1D;
-$color-crimson: #EF1616;
-$color-thunderbird: #D51919;
-
-$color-tree-poppy: #FF971F;
-$color-my-sin: #FFB72D;
-
-$color-link-water: #c9dbf2;
-$color-perano: #adcaef;
-$color-bleach-white: #feeddb;
-$color-casablanca: #f9a94f;
 
 // global
 $minWidth: 320px;
-
-// header
-$headerHeight: (
-    'normal': 170px,
-    'tablet': 80px,
-    'mobile': 60px
-);
-
 
 // Breakpoints
 $breakpoints: (
@@ -117,12 +50,4 @@ $breakpoints: (
     'ultrahuge': (max-width: 1400px),
     'premonsterhuge': (max-width: 1717px),
     'monsterhuge': (max-width: 2000px)
-);
-
-// Grid
-$susy: (
-    columns: 12,
-    container: 1170px,
-    gutters: 1/2,
-    global-box-sizing: border-box
 );

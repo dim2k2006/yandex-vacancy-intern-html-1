@@ -1,15 +1,11 @@
+/* FAMILY */
+@import 'base/family';
+
 /* BASE */
 @import 'base/mixins';
 @import 'base/variables';
 @import 'base/base';
-@import 'base/fonts';
 @import 'base/typography';
 
-/* GRID */
-@import '../bower_components/susy/sass/susy';
-
-/* FAMILY */
-@import 'base/family';
-
 /* BLOCKS */
-@import "../blocks/footer/footer";
+@import "../blocks/**/*.scss";

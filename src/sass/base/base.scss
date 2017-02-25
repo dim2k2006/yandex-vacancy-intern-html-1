@@ -14,16 +14,7 @@ html {
 
 body {
     width: 100%;
-    background: $color-athens-gray-lighter;
-}
-
-.pageWrapper {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    overflow: hidden;
+    background: $color-white;
 }
 
 img {
@@ -40,77 +31,4 @@ button {
     line-height: normal;
     outline: none;
     user-select: none;
-}
-
-input:not([type]),
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="color"],
-textarea {
-    //@include inputDefault;
-}
-
-input:not([type])::-ms-clear,
-input:not([type])::-ms-reveal,
-
-input[type="text"]::-ms-clear,
-input[type="text"]::-ms-reveal,
-
-input[type="password"]::-ms-clear,
-input[type="password"]::-ms-reveal,
-
-input[type="date"]::-ms-clear,
-input[type="date"]::-ms-reveal,
-
-input[type="datetime"]::-ms-clear,
-input[type="datetime"]::-ms-reveal,
-
-input[type="datetime-local"]::-ms-clear,
-input[type="datetime-local"]::-ms-reveal,
-
-input[type="month"]::-ms-clear,
-input[type="month"]::-ms-reveal,
-
-input[type="week"]::-ms-clear,
-input[type="week"]::-ms-reveal,
-
-input[type="email"]::-ms-clear,
-input[type="email"]::-ms-reveal,
-
-input[type="number"]::-ms-clear,
-input[type="number"]::-ms-reveal,
-
-input[type="search"]::-ms-clear,
-input[type="search"]::-ms-reveal,
-
-input[type="tel"]::-ms-clear,
-input[type="tel"]::-ms-reveal,
-
-input[type="time"]::-ms-clear,
-input[type="time"]::-ms-reveal,
-
-input[type="url"]::-ms-clear,
-input[type="url"]::-ms-reveal,
-
-input[type="color"]::-ms-clear,
-input[type="color"]::-ms-reveal,
-
-textarea::-ms-clear,
-textarea::-ms-reveal {
-    display: none;
-}
-
-textarea {
-    //@include textareaDefault;
 }
