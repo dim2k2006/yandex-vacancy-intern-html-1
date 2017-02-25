@@ -10,6 +10,7 @@ $globalWrapper: '.globalWrapper';
     margin-right: auto;
     padding-bottom: 50px;
     background-color: $color-white;
+    overflow: hidden;
     @include clearfix;
 
     &:before {
@@ -22,5 +23,12 @@ $globalWrapper: '.globalWrapper';
         right: 0;
         border-left: 1px solid $color-silver;
         box-shadow: -10px 0 15px -10px rgba(0, 0, 0, 0.5);
+        @include transition(transform 250ms ease-out 250ms, opacity 250ms linear 250ms);
+
+        @include respond-to('medium') {
+            opacity: 0;
+            transform: translate3d(300px, 0, 0);
+            @include transition(transform 250ms ease-out, opacity 250ms ease-out);
+        }
     }
 }

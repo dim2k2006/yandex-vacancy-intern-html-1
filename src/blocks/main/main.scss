@@ -6,6 +6,12 @@ $main: '.main';
     width: calc(100% - 300px);
     float: left;
     padding: 15px;
+    @include transition(width 250ms ease-out);
+
+    @include respond-to('medium') {
+        width: 100%;
+        @include transition(width 250ms ease-out 250ms);
+    }
 
     p {
         @include f-last(1) {

@@ -6,6 +6,14 @@ $aside: '.aside';
     width: 300px;
     float: right;
     padding: 15px;
+    opacity: 1;
+    @include transition(transform 250ms ease-out 250ms, opacity 250ms linear 250ms);
+
+    @include respond-to('medium') {
+        opacity: 0;
+        transform: translate3d(300px, 0, 0);
+        @include transition(transform 250ms ease-out, opacity 250ms ease-out);
+    }
 
     p {
         @include f-last(1) {
