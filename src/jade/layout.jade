@@ -19,7 +19,6 @@ html(lang="ru")
 
         link(rel="shortcut icon", href="images/favicon.png", type="image/x-icon")
 
-        link(href='css/vendor.min.css' rel='stylesheet')
         link(href='css/main.min.css' rel='stylesheet')
 
         <!--[if lt IE 9]>
@@ -28,14 +27,8 @@ html(lang="ru")
         <![endif]-->
     body
 
-        include ../blocks/header/header
-
         +b('main').main
 
             block content
 
-        include ../blocks/footer/footer
-
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-        script(src='scripts/vendor.min.js')
         script(src='scripts/main.min.js')

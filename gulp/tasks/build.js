@@ -6,9 +6,7 @@ gulp.task('build', () => (
         'clean',
         'copy',
         'images',
-        'styles-dependencies',
         'styles',
-        'scripts-dependencies',
         'scripts',
         'markup'
     )
