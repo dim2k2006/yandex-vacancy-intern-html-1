@@ -5,5 +5,12 @@ $modal: '.modal';
     display: none;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     background: rgba($color-shocking-pink, .1);
+    z-index: 9999;
+
+    &_state_open {
+        display: block;
+    }
 }

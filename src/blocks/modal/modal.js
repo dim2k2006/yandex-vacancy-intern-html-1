@@ -10,6 +10,7 @@
     var Modal = function () {
         var self = this;
 
+        self.html = '';
         self.body = '';
         self.container = document.querySelector('.modal');
         self.openButton = document.querySelector('.modal_trigger');
@@ -26,19 +27,29 @@
         self.open = function(event) {
             event.preventDefault();
 
-            console.log('open');
+            var target = this,
+                src = target.getAttribute('href'),
+                container = document.querySelector(src);
+
+            self.html.classList.add('modal_state_open');
+            container.classList.add('modal_state_open');
         };
 
         self.close = function(event) {
             event.preventDefault();
 
-            console.log('close');
+            var target = this,
+                container = target.closest('.modal');
+
+            container.classList.remove('modal_state_open');
+            self.html.classList.remove('modal_state_open');
         };
 
         /**
          * Import properties from Main class
          */
         self.importDefaults = function() {
+            self.html = app.modules.globalWrapper.html;
             self.body = app.modules.globalWrapper.body;
         };
 
@@ -48,6 +59,7 @@
         self.init = function() {
             if (self.container) {
 
+                self.importDefaults();
                 self.setupListener();
 
             }
