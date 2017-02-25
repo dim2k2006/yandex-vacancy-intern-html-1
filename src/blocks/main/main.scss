@@ -3,4 +3,13 @@ $main: '.main';
 #{$main} {
     position: relative;
     display: block;
+    width: calc(100% - 300px);
+    float: left;
+    padding: 15px;
+
+    p {
+        @include f-last(1) {
+            margin-bottom: 0;
+        }
+    }
 }

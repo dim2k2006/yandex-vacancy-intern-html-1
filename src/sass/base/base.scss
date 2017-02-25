@@ -6,10 +6,11 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     position: relative;
+    height: 100%;
     min-height: 100%;
-    min-width: $minWidth;
 }
 
 body {

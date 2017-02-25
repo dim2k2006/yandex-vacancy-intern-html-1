@@ -4,6 +4,7 @@ include mixins/bemto
 include ../blocks/header/header
 include ../blocks/footer/footer
 include ../blocks/aside/aside
+include ../blocks/main/main
 
 block vars
     - var innerPage = false
@@ -33,6 +34,7 @@ html(lang="ru")
         +b('div').globalWrapper
             +header
 
+            +main
 
             +aside
 
