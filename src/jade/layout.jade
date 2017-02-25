@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 include mixins/bemto
+include ../blocks/header/header
+include ../blocks/footer/footer
 
 block vars
     - var innerPage = false
@@ -27,7 +29,10 @@ html(lang="ru")
         <![endif]-->
     body
 
-        +b('main').main
+        +b('div').globalWrapper
+            +header
+
+            +footer
 
             block content
 
