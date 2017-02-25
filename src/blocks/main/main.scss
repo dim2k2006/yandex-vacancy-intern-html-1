@@ -5,10 +5,7 @@ $main: '.main';
     display: block;
     width: calc(100% - 300px);
     float: left;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 65px;
+    padding: 15px;
 
     p {
         @include f-last(1) {
