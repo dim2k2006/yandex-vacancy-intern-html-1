@@ -5,6 +5,7 @@ include ../blocks/header/header
 include ../blocks/footer/footer
 include ../blocks/aside/aside
 include ../blocks/main/main
+include ../blocks/modal/modal
 
 block vars
     - var innerPage = false
@@ -38,6 +39,9 @@ html(lang="ru")
 
             +footer
 
-            block content
+        +modal
+
+        script.
+            var app = {};
 
         script(src="scripts/main.min.js")

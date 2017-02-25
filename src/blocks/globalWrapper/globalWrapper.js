@@ -1,5 +1,3 @@
-var app = {};
-
 var initApp = function() {
     if ('modules' in app && 'globalWrapper' in app.modules) {
         return;
