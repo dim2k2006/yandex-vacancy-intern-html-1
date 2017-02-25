@@ -7,7 +7,6 @@ gulp.task('default', () => (
         'copy',
         'images',
         'styles',
-        'scripts',
         'markup',
         'connect',
         'watch'
