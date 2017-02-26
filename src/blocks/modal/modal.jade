@@ -1,4 +1,11 @@
+include ../login/login
+
 mixin modal
     +b('section').modal(id="login")
-        +e('div').wrapper
-            +e('a').link(href="#", class="modal_close")!= "Закрыть"
+        +e('div').table
+            +e('div').cell
+                +e('div').content
+                    +login
+
+                +e('div').footer
+                    +e('a').link(href="#", class="button modal_close")!= "Закрыть"

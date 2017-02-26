@@ -1,0 +1,10 @@
+$login: '.login';
+
+#{$login} {
+    position: relative;
+    display: block;
+    max-width: 600px;
+    padding: 15px;
+    text-align: center;
+    background-color: $color-white;
+}

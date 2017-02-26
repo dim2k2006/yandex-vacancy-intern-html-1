@@ -1,0 +1,25 @@
+$button: '.button';
+
+#{$button} {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    font-size: $font-size-smaller;
+    line-height: $line-height-prelittle;
+    color: $color-black;
+    text-decoration: none;
+    border: 1px solid rgba($color-black, .2);
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: $color-white;
+    @include transition(background-color);
+
+    &:hover {
+        text-decoration: none;
+        background-color: darken($color-white, 5%);
+    }
+}
