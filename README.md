@@ -18,6 +18,7 @@
 
 ```diff
 + green color is for done tasks
+
 - red color is for not done tasks
 ```
 #### Task 1 (main)
