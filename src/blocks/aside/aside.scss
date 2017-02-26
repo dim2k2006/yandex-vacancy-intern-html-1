@@ -21,3 +21,11 @@ $aside: '.aside';
         }
     }
 }
+
+.globalWrapper_aside_hidden {
+    #{$aside} {
+        opacity: 0;
+        transform: translate3d(300px, 0, 0);
+        @include transition(transform 250ms ease-out, opacity 250ms ease-out);
+    }
+}
