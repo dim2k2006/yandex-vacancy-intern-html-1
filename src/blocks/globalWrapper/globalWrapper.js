@@ -25,6 +25,38 @@ var initApp = function() {
          */
         self.setupListener = function() {
             window.addEventListener('scroll', self.scrollHandle);
+            self.main.addEventListener('transitionend', self.handlePosition);
+        };
+
+        /**
+         * Keep focus after aside has ben closed
+         * @param {Object} event
+         */
+        self.handlePosition = function(event) {
+            if (event.propertyName === 'width') {
+
+                var height = self.main.offsetHeight,
+                    offset = 0;
+
+                if (self.asideHidden) {
+
+                    offset = self.mainHeight - height;
+
+                    self.main.style.marginTop = offset + 'px';
+
+                    window.scrollBy(0, offset / 2);
+
+                } else {
+
+                    offset = parseInt(self.main.style.marginTop);
+
+                    self.main.style.marginTop = '0px';
+
+                    window.scrollBy(0, offset * (-1));
+
+                }
+
+            }
         };
 
         /**
@@ -50,14 +82,20 @@ var initApp = function() {
          * Hide aside
          */
         self.hideAside = function() {
-            self.container.classList.add('globalWrapper_aside_hidden');
+            if (!self.container.classList.contains('globalWrapper_aside_hidden')) {
+
+                self.container.classList.add('globalWrapper_aside_hidden');
+            }
         };
 
         /**
          * Show aside
          */
         self.showAside = function() {
-            self.container.classList.remove('globalWrapper_aside_hidden');
+            if (self.container.classList.contains('globalWrapper_aside_hidden')) {
+
+                self.container.classList.remove('globalWrapper_aside_hidden');
+            }
         };
 
         /**
