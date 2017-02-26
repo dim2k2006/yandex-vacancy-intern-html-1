@@ -12,7 +12,37 @@ var initApp = function() {
 
         self.html = document.querySelector('html');
         self.body = document.querySelector('body');
+        self.container = document.querySelector('.globalWrapper');
+        self.aside = document.querySelector('aside');
+        self.asideBottomLimit = parseInt(self.aside.getBoundingClientRect().bottom + window.pageYOffset);
+        self.asideHidden = false;
         self.modules = app.modules;
+
+        /**
+         * Add event listeners
+         */
+        self.setupListener = function() {
+            window.addEventListener('scroll', self.scrollHandle);
+        };
+
+        /**
+         * Handle scroll event
+         */
+        self.scrollHandle = function() {
+            var scrollTop = window.pageYOffset;
+
+            self.asideHidden = scrollTop > self.asideBottomLimit;
+
+            if (self.asideHidden) {
+
+                self.container.classList.add('globalWrapper_aside_hidden');
+
+            } else {
+
+                self.container.classList.remove('globalWrapper_aside_hidden');
+
+            }
+        };
 
         /**
          * Init all modules in app.modules
@@ -38,6 +68,7 @@ var initApp = function() {
          */
         self.init = function() {
             self.initModules();
+            self.setupListener();
         };
     };
 
