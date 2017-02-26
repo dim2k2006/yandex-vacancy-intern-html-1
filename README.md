@@ -13,3 +13,11 @@
 1. git clone git@github.com:dim2k2006/yandex-vacancy-intern-html-1.git
 
 2. Open main.html file in folder «static»
+
+## Task
+
+```diff
++ green color is for done tasks
+- red color is for not done tasks
+```
+
